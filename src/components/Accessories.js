@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import LeftArrowIcon from './LeftArrowIcon'
 import RightArrowIcon from './RightArrowIcon'
@@ -62,6 +62,8 @@ const mockupData = [
 ]
 
 const Accessories = () => {
+  const [activeCard, setActiveCard] = useState(2)
+
   return (
     <StyledSection>
       <ArrowsWrapper>
@@ -72,7 +74,11 @@ const Accessories = () => {
         <StyledHeader>Accessories</StyledHeader>
         <CardsWrapper>
           {mockupData.map((card) => (
-            <AccessoriesCard card={card} isActive={card.id === 2} />
+            <AccessoriesCard
+              card={card}
+              isActive={card.id === activeCard}
+              setActiveCard={setActiveCard}
+            />
           ))}
         </CardsWrapper>
       </StyledContainer>

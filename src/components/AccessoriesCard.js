@@ -14,6 +14,7 @@ const CardWrapper = styled.div`
     ${(props) => (props.isActive ? 'transparent' : props.theme.colors.gray)};
   border-radius: 2em;
   cursor: pointer;
+  transition: all 300ms ease-out;
 
   &:not(:last-of-type) {
     margin-bottom: 5vh;
@@ -51,15 +52,18 @@ const StyledPriceWrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin-right: 5rem;
+  font-family: ${({ theme }) => theme.font.secondary};
+  font-weight: ${({ theme }) => theme.fw.light};
+  font-size: ${({ theme }) => theme.fs.xs};
 `
 
 const StyledFlippedPrice = styled.p`
   transform: rotate(-90deg);
 `
 
-const AccessoriesCard = ({ card, isActive }) => {
+const AccessoriesCard = ({ card, isActive, setActiveCard }) => {
   return (
-    <CardWrapper isActive={isActive}>
+    <CardWrapper isActive={isActive} onClick={() => setActiveCard(card.id)}>
       {isActive && (
         <StyledPriceWrapper>
           <StyledFlippedPrice>{card.price}</StyledFlippedPrice>
@@ -82,10 +86,12 @@ AccessoriesCard.propTypes = {
     price: PropTypes.string,
   }).isRequired,
   isActive: PropTypes.bool,
+  setActiveCard: PropTypes.func,
 }
 
 AccessoriesCard.defaultProps = {
   isActive: false,
+  setActiveCard: () => {},
 }
 
 export default AccessoriesCard
