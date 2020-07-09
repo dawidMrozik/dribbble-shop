@@ -13,6 +13,7 @@ const StyledIcon = styled.button`
   justify-content: center;
   align-items: center;
   box-shadow: 0 1.5em 2em 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 `
 
 const SortIcon = () => {

@@ -5,6 +5,7 @@ import styled from 'styled-components'
 const CardWrapper = styled.div`
   display: flex;
   align-items: center;
+  padding: 0 ${({ isActive }) => (isActive ? '1.5rem' : '5rem')};
   width: ${({ isActive }) => (isActive ? '90%' : '80%')};
   height: 15vh;
   background-color: ${(props) =>
@@ -12,6 +13,7 @@ const CardWrapper = styled.div`
   border: 1px solid
     ${(props) => (props.isActive ? 'transparent' : props.theme.colors.gray)};
   border-radius: 2em;
+  cursor: pointer;
 
   &:not(:last-of-type) {
     margin-bottom: 5vh;
@@ -32,9 +34,38 @@ const StyledDesc = styled.p`
   margin: 0;
 `
 
+const StyledImg = styled.img`
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  margin-right: 5rem;
+`
+
+const StyledPriceWrapper = styled.div`
+  width: 2.5rem;
+  height: 6rem;
+  border-radius: 2em;
+  background-color: ${({ theme }) => theme.colors.accentDark};
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5rem;
+`
+
+const StyledFlippedPrice = styled.p`
+  transform: rotate(-90deg);
+`
+
 const AccessoriesCard = ({ card, isActive }) => {
   return (
     <CardWrapper isActive={isActive}>
+      {isActive && (
+        <StyledPriceWrapper>
+          <StyledFlippedPrice>{card.price}</StyledFlippedPrice>
+        </StyledPriceWrapper>
+      )}
+      <StyledImg src="https://via.placeholder.com/400x400/E7DDF2/473889?text=Product" />
       <div>
         <StyledTitle isActive={isActive}>{card.name}</StyledTitle>
         <StyledDesc isActive={isActive}>{card.desc}</StyledDesc>

@@ -45,16 +45,19 @@ const mockupData = [
     id: 1,
     name: 'Comb 2.0',
     desc: 'Original Version',
+    price: '$50.00',
   },
   {
     id: 2,
     name: 'Watch+',
     desc: 'Trending 2020',
+    price: '$19.00',
   },
   {
     id: 3,
     name: 'Camera®',
     desc: 'Classic 1992',
+    price: '$29.99',
   },
 ]
 
