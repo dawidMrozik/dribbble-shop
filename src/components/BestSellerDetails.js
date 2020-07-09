@@ -7,7 +7,8 @@ const BestSellerDetailsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 34%;
+  height: 33%;
+  width: 96%;
   background-color: ${(props) =>
     props.isActive ? props.theme.colors.accentLight : props.theme.colors.gray};
   border-radius: 2em;

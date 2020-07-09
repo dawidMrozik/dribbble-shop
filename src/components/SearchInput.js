@@ -3,11 +3,11 @@ import styled from 'styled-components'
 import searchIcon from '../assets/search-icon.svg'
 
 const StyledInput = styled.input`
-  width: 20rem;
+  width: 25rem;
   height: 3rem;
-  padding: 1em;
+  padding: 1.2em;
   margin-right: 6rem;
-  border-radius: 1.1em;
+  border-radius: 0.6em;
   border: 1px solid #e7e7e7;
   background-image: url(${searchIcon});
   background-repeat: no-repeat;

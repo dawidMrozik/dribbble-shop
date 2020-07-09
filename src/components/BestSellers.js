@@ -9,13 +9,15 @@ const StyledSection = styled.section`
 const StyledHeader = styled.div`
   display: flex;
   align-items: center;
-  margin: 1em 0;
+  height: 15rem;
 `
 
 const StyledTitle = styled.h2`
   color: ${({ theme }) => theme.colors.accentDark};
   font-size: ${({ theme }) => theme.fs.xxl};
   margin-right: 1em;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 `
 
 const StyledWrapper = styled.div`
@@ -24,11 +26,13 @@ const StyledWrapper = styled.div`
 
 const mockupData = [
   {
+    id: 1,
     name: 'Face Mask',
     desc: 'Grape Fruit',
     price: '$16,00',
   },
   {
+    id: 2,
     name: 'Rice Cream',
     desc: 'Rice Bran Oil',
     price: '$19,00',

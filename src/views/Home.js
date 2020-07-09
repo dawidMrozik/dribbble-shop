@@ -4,6 +4,7 @@ import MainTemplate from '../templates/MainTemplate'
 import Header from '../components/Header'
 import bg from '../assets/bg.svg'
 import BestSellers from '../components/BestSellers'
+import Accessories from '../components/Accessories'
 
 const StyledContainer = styled.div`
   display: grid;
@@ -26,6 +27,7 @@ const Home = () => {
       <StyledContainer>
         <Header />
         <BestSellers />
+        <Accessories />
       </StyledContainer>
     </MainTemplate>
   )
